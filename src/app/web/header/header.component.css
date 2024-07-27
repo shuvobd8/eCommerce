@@ -1,0 +1,14 @@
+/* Optional: Custom styles for the header */
+.navbar-brand {
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+  
+  .navbar-nav .nav-link {
+    font-size: 1.1em;
+  }
+  
+  .form-inline .form-control {
+    width: 250px;
+  }
+  

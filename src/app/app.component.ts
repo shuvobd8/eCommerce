@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-root',
@@ -10,4 +11,10 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'eCommerce';
+
+  constructor(private toastr: ToastrService){}
+
+  doSuccess(){
+    this.toastr.success('Hello Word! Toastr Success', 'Success')
+  }
 }
