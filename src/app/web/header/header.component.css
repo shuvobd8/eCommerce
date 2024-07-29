@@ -264,6 +264,8 @@
   }
   
 
+
+
   .bxs-cart:before {
     font-size: 180%; /* Adjust icon size if necessary */
   }
@@ -311,4 +313,11 @@
     font-size: 18px;
     font-weight: 600;
     letter-spacing: 0.5px;
+}
+
+.img-fluid{
+
+  width: 100%;
+  height: 300px;
+
 }
