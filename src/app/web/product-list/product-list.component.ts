@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { HeaderComponent } from "../header/header.component";
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-product-list',
@@ -28,11 +29,24 @@ export class ProductListComponent {
       price: 199.99,
       description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.',
       image: 'https://via.placeholder.com/300x200'
+    },
+    {
+      title: 'Product 4',
+      price: 199.99,
+      description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.',
+      image: 'https://via.placeholder.com/300x200'
     }
   ];
 
+  constructor(private toastr: ToastrService){}
+
+  doSuccess(){
+    this.toastr.success('Hello Word! Toastr Success', 'Success')
+  }
+
   addToCart(product: any) {
     console.log('Product added to cart:', product);
+    this.toastr.success('Hello Word! Toastr Success', 'Success')
   }
 
 }
