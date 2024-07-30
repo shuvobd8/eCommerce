@@ -45,6 +45,38 @@ export class ProductListComponent {
       description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.',
      // image: 'https://via.placeholder.com/300x200'
       image  : "assets/image/17.jpg"
+    },
+    {
+      stock : 'In Stock',
+      title: 'Product 4',
+      price: 199.99,
+      description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.',
+     // image: 'https://via.placeholder.com/300x200'
+      image  : "assets/image/13.jpg"
+    },
+    {
+      stock : 'In Stock',
+      title: 'Product 4',
+      price: 199.99,
+      description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.',
+     // image: 'https://via.placeholder.com/300x200'
+      image  : "assets/image/16.jpg"
+    },
+    {
+      stock : 'In Stock',
+      title: 'Product 4',
+      price: 199.99,
+      description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.',
+     // image: 'https://via.placeholder.com/300x200'
+      image  : "assets/image/15.jpg"
+    },
+    {
+      stock : 'In Stock',
+      title: 'Product 4',
+      price: 199.99,
+      description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.',
+     // image: 'https://via.placeholder.com/300x200'
+      image  : "assets/image/14.jpg"
     }
   ];
 
