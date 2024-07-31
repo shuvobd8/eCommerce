@@ -1,7 +1,11 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HeaderComponent } from "../header/header.component";
 import { ToastrService } from 'ngx-toastr';
+import { ProductService } from '../../core/service/product.service';
+import { Observable } from 'rxjs';
+import { ApiResponseModel } from '../../core/classes/api-response.model';
+import { Product } from '../../core/classes/product';
 
 @Component({
   selector: 'app-product-list',
@@ -10,80 +14,26 @@ import { ToastrService } from 'ngx-toastr';
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.css'
 })
-export class ProductListComponent {
-  products = [
-    {
-      stock : 'In Stock',
-      title: 'HP Laptop',
-      price: 99.99,
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      // image: 'https://via.placeholder.com/300x200',
-      image  : "assets/image/hp-laptop2.jpg"
-    },
-    {
-      stock : 'In Stock',
-      title: 'Product 2',
-      price: 149.99,
-      description: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      //image: 'https://via.placeholder.com/300x200'
-      image  : "assets/image/2.jpg"
-    },
-    
-  
-    {
-      stock : 'In Stock',
-      title: 'Product 4',
-      price: 199.99,
-      description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.',
-     // image: 'https://via.placeholder.com/300x200'
-      image  : "assets/image/5.jpg"
-    },
-    {
-      stock : 'In Stock',
-      title: 'Product 4',
-      price: 199.99,
-      description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.',
-     // image: 'https://via.placeholder.com/300x200'
-      image  : "assets/image/17.jpg"
-    },
-    {
-      stock : 'In Stock',
-      title: 'Product 4',
-      price: 199.99,
-      description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.',
-     // image: 'https://via.placeholder.com/300x200'
-      image  : "assets/image/13.jpg"
-    },
-    {
-      stock : 'In Stock',
-      title: 'Product 4',
-      price: 199.99,
-      description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.',
-     // image: 'https://via.placeholder.com/300x200'
-      image  : "assets/image/16.jpg"
-    },
-    {
-      stock : 'In Stock',
-      title: 'Product 4',
-      price: 199.99,
-      description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.',
-     // image: 'https://via.placeholder.com/300x200'
-      image  : "assets/image/15.jpg"
-    },
-    {
-      stock : 'In Stock',
-      title: 'Product 4',
-      price: 199.99,
-      description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.',
-     // image: 'https://via.placeholder.com/300x200'
-      image  : "assets/image/14.jpg"
-    }
-  ];
+export class ProductListComponent implements OnInit {
 
-  constructor(private toastr: ToastrService){}
+  products :Product = new Product();
 
-  doSuccess(){
-    this.toastr.success('Hello Word! Toastr Success', 'Success')
+  constructor(private toastr: ToastrService,private productSrv:ProductService){}
+  ngOnInit(): void {
+    this. getProducts();
+  }
+
+  getProducts(){
+    this.productSrv.getProducts().subscribe((res:ApiResponseModel)=>{
+      if(res.vCode=="1")
+      {
+        this.products = res.data;
+      }else{
+        this.toastr.error(res.vMsg,'Error Message')
+      }
+    },error=>{
+      this.toastr.error(error,'Error Message')
+    })
   }
 
   addToCart(product: any) {
