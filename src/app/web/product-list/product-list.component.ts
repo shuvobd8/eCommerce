@@ -14,7 +14,7 @@ import { SliderComponent } from '../slider/slider.component';
 @Component({
   selector: 'app-product-list',
   standalone: true,
-  imports: [CommonModule, HeaderComponent,SliderComponent],
+  imports: [CommonModule, HeaderComponent,SliderComponent,RouterLink],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.css'
 })

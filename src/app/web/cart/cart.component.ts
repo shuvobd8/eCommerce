@@ -30,6 +30,20 @@ export class CartComponent implements OnInit {
       this.cartServive.removeFromCart(productId);
     }
   }
+
+  onQuantityChange(event: Event, product: any): void {
+    const inputElement = event.target as HTMLInputElement;
+    let selectedQuantity = +inputElement.value; 
+    if (selectedQuantity < 1) {
+      selectedQuantity = 1;
+      inputElement.value = '1';
+    }
+
+    const index = this.products.findIndex(p => p.product_id === product.product_id);
+    if (index !== -1) {
+      this.products[index].stock_quantity = selectedQuantity;
+    }
+  }
   
 
 }
