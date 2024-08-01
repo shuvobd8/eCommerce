@@ -14,18 +14,17 @@ export class CartService {
     this.loadCartFromCookies();
   }
 
-  // private saveCartToCookies() {
-  //   const expiryDate = new Date();
-  //   expiryDate.setTime(expiryDate.getTime() + (1 * 60 * 1000));
-  //   //expiryDate.setDate(expiryDate.getDate() + 10);
-  //   this.cookieService.set('cart', JSON.stringify(this.cartItems));
-  // }
-
   private saveCartToCookies() {
     const expiryDate = new Date();
-    expiryDate.setTime(expiryDate.getTime() + 5); // Set the cookie to expire in 1 minute
-    this.cookieService.set('cart', JSON.stringify(this.cartItems), { expires: expiryDate });
+    expiryDate.setDate(expiryDate.getDate() + 10);
+    this.cookieService.set('cart', JSON.stringify(this.cartItems),{ expires: expiryDate });
   }
+
+  // private saveCartToCookies() {
+  //   const expiryDate = new Date();
+  //   expiryDate.setTime(expiryDate.getTime() + 5); // Set the cookie to expire in 1 minute
+  //   this.cookieService.set('cart', JSON.stringify(this.cartItems), { expires: expiryDate });
+  // }
 
   private loadCartFromCookies() {
     const cartCookie = this.cookieService.get('cart');
