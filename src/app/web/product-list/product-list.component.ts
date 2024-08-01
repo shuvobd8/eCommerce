@@ -7,11 +7,12 @@ import { Observable } from 'rxjs';
 import { ApiResponseModel } from '../../core/classes/api-response.model';
 import { Product } from '../../core/classes/product';
 import { CartService } from '../../core/service/cart.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-product-list',
   standalone: true,
-  imports: [CommonModule, HeaderComponent],
+  imports: [CommonModule, HeaderComponent,RouterLink],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.css'
 })

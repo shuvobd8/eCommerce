@@ -84,7 +84,7 @@
   
   .main-menu {
     position: relative;
-    z-index: 3;
+ 
   }
   
   .sub-menu {
@@ -112,6 +112,8 @@
   .user-dropdown .nav-link {
     padding: 0.15rem 0;
   }
+
+
   
   #sidebar {
     background: #fff;
@@ -258,10 +260,7 @@
     height: 2.25rem;
   }
   
-  .user-dropdown .dropdown-menu {
-    left: auto;
-    right: 0;
-  }
+  
   
 
 
@@ -276,8 +275,6 @@
   
 
 
-
-
-
-
-
+#loginbtn{
+  left: 87% ;
+}
