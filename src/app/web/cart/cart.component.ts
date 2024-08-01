@@ -23,4 +23,12 @@ export class CartComponent implements OnInit {
     })
   }
 
+  removeProduct(productId: number): void {
+    const confirmed = confirm("Are you sure you want to remove this product from the cart?");
+    if (confirmed) {
+      this.cartServive.removeFromCart(productId);
+    }
+  }
+  
+
 }
