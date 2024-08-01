@@ -6,6 +6,7 @@ import { ProductService } from '../../core/service/product.service';
 import { Observable } from 'rxjs';
 import { ApiResponseModel } from '../../core/classes/api-response.model';
 import { Product } from '../../core/classes/product';
+import { CartService } from '../../core/service/cart.service';
 
 @Component({
   selector: 'app-product-list',
@@ -18,7 +19,7 @@ export class ProductListComponent implements OnInit {
 
   products: Product[] = [];
 
-  constructor(private toastr: ToastrService,private productSrv:ProductService){}
+  constructor(private toastr: ToastrService,private productSrv:ProductService,private cartSrv:CartService){}
   ngOnInit(): void {
     this. getProducts();
   }
@@ -37,8 +38,8 @@ export class ProductListComponent implements OnInit {
   }
 
   addToCart(product: any) {
-    console.log('Product added to cart:', product);
-    this.toastr.success('Hello Word! Toastr Success', 'Success')
+    this.cartSrv.addToCart(product);
+    //this.toastr.success('Product Cart to successful', 'Success')
   }
 
 }
