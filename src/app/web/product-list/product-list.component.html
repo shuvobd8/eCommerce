@@ -1,19 +1,8 @@
 
- <!-- <div class="container-fluid">
-    <div class="row mt-4">
-      <div class="col-md-3" *ngFor="let product of products">
-        <div class="product-card">
-          <img [src]="product.image" alt="{{product.title}}">
-          <div class="product-title">{{product.title}}</div>
-          <div class="product-price">{{product.price }}</div>
-          <div class="product-description">{{product.description}}</div>
-          <button class="btn btn-primary" (click)="addToCart(product)">Add to Cart</button>
-        </div>
-      </div>
-    </div>
-  </div> -->
+
   <app-slider></app-slider>
-  <div class="py-3 py-md-3 ">
+
+  <!-- <div class="py-3 py-md-3 ">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
@@ -26,12 +15,12 @@
                               [ngClass]="{'bg-success': product.stock_quantity > 1, 'bg-danger': product.stock_quantity <= 1}">
                          {{ product.stock_quantity > 1 ? 'In Stock' : 'Out Stock' }}
                        </label>
-                                  <img [src]="product.image">
+                                  <img routerLink="/product-detail" [src]="product.image">
                             </div>
                             <div class="product-card-body">
-                                <!-- <p class="product-brand">HP</p> -->
+                              
                                 <h5 class="product-name">
-                                  <a href="">{{product.product_name}}</a>
+                                  <a>{{product.product_name}}</a>
                                 </h5>
                                 <div>
                                     <span class="selling-price">{{product.sales_price - product.discount_amount}}</span>
@@ -46,4 +35,58 @@
                     </div>
         </div>
     </div>
-</div> 
+</div>  -->
+
+
+
+<div class = "container-fluid">
+  <div class = "row my-3">
+      <h1 class = "text-center">Featured Products</h1>
+  </div>
+
+  <div class = "row g-2 my-2 mx-auto owl-carousel owl-theme" >
+      <div class = "col product-item mx-auto" *ngFor="let product of products">
+          <div class = "product-img">
+            <label class="stock"
+            [ngClass]="{'bg-success': product.stock_quantity > 1, 'bg-danger': product.stock_quantity <= 1}">
+            {{ product.stock_quantity > 1 ? 'In Stock' : 'Out Stock' }}
+            </label>
+              <img [src]="product.image" alt = "" class = "img-fluid d-block mx-auto">
+             
+              <div class = "row btns w-100 mx-auto text-center">
+                  <button type = "button" (click)="addToCart(product)" class = "col-6 py-2">
+                      <i class = "fa fa-cart-plus" ></i> Add to Cart
+                  </button>
+                  <button type = "button" routerLink="/product-detail" class = "col-6 py-2">
+                      <i class = "fa fa-binoculars"></i> View
+                  </button>
+              </div>
+          </div>
+
+          <div class = "product-info p-3">
+              <span class = "product-type">Electronics & Accessories</span>
+              <a href = "#" class = "d-block text-dark text-decoration-none py-2 product-name">{{product.product_name}}</a>
+              <span class = "product-price">{{product.sales_price - product.discount_amount}}</span>
+              <div class = "rating d-flex mt-1">
+                  <span>
+                      <i class = "fa fa-star"></i>
+                  </span>
+                  <span>
+                      <i class = "fa fa-star"></i>
+                  </span>
+                  <span>
+                      <i class = "fa fa-star"></i>
+                  </span>
+                  <span>
+                      <i class = "fa fa-star"></i>
+                  </span>
+                  <span>
+                      <i class = "fa fa-star"></i>
+                  </span>
+                  <span>(25 reviews)</span>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+

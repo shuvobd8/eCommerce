@@ -3,12 +3,14 @@ import { ProductListComponent } from '../product-list/product-list.component';
 import { CartService } from '../../core/service/cart.service';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatButtonModule } from '@angular/material/button';
 
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [ProductListComponent,RouterLink,CommonModule],
+  imports: [ProductListComponent,RouterLink,CommonModule,MatMenuModule,MatButtonModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })

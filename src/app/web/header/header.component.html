@@ -1,34 +1,51 @@
 
+
+<!-- -------navbar start------------------ -->
 <nav class="navbar navbar-expand-md navbar-light bg-light main-menu" style="box-shadow:none">
+  
   <div class="container-fluid">
 
-    <a class="navbar-brand" routerLink="/">
-      <h4 class="font-weight-bold">Logo</h4>
-    </a>
-
-    <div class="collapse navbar-collapse">
      
-      <form class="d-flex form-inline my-2 my-lg-0 mx-auto">
-         <input class="form-control" type="search" placeholder="Search for products..." aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+      <!-- <div class="logo">
+        <img src="assets\image\22.png"  alt="logo" class="rounded-3" />
+      </div> -->
+      <a class="navbar-brand" routerLink="/">
+        <img src="assets\image\22.png" style="width: 100px; height: 100px;margin-top: -22%;"/>
+      </a>
 
-     <ul class="navbar-nav">
-        <li class="nav-item">
+      <div class="collapse navbar-collapse">
+      
+      
+        <form class="d-flex form-inline my-2 my-lg-0 mx-auto">
+          <input class="form-control" type="search" placeholder="Search for products..." aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
 
-         <a class="btn btn-link" routerLink="cart"><i class="bx bxs-cart icon-single"></i>
-          <span class="badge bg-danger">{{ cartItemCount }}</span>
-        </a>
-
-        </li>
-        <li class="nav-item ml-md-3">
-          <a class="btn btn-primary" href="#"><i class="bx bxs-user-circle mr-1"></i> Log In / Register</a>
-        </li>
-      </ul>
-    </div>
+      <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="btn btn-link" routerLink="cart"><i class="bx bxs-cart icon-single"></i>
+              <span class="badge bg-danger">{{ cartItemCount }}</span>
+            </a>
+          </li>
+            <li class="dropdown-toggle" data-bs-toggle="dropdown" >
+            <a class="btn btn-primary" href="#"> <i class="fa fa-user"></i> Log In</a>
+          </li>  
+            <ul class="dropdown-menu loginbtn" id="loginbtn" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#"><i class="fa fa-user-plus"></i> Register</a></li>
+             <li><a class="dropdown-item" href="#"><i class="fa fa-user"></i> Profile</a></li>
+            <li><a class="dropdown-item" href="#"><i class="fa fa-list"></i> My Orders</a></li>
+            <li><a class="dropdown-item" href="#"><i class="fa fa-heart"></i> My Wishlist</a></li>
+            <li><a class="dropdown-item" href="#"><i class="fa fa-shopping-cart"></i> My Cart</a></li>
+            <li><a class="dropdown-item" href="#"><i class="fa fa-sign-out"></i> Logout</a></li> 
+            </ul>
+        </ul>
+      </div>
 
   </div>
 </nav>
+
+<!-- -------navbar end------------------ -->
+
 
 <!-- menu---------------------------------- -->
 <nav class="navbar navbar-expand-md navbar-light bg-light sub-menu">
@@ -44,11 +61,12 @@
         <li class="nav-item">
           <a class="nav-link" href="#">Schools</a>
         </li>
+
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Dropdown
           </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <ul class="dropdown-menu"  aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="#">Action</a></li>
             <li><a class="dropdown-item" href="#">Another action</a></li>
             <li><hr class="dropdown-divider"></li>
