@@ -7,6 +7,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 
 
+
 @Component({
   selector: 'app-header',
   standalone: true,
@@ -17,6 +18,7 @@ import { MatButtonModule } from '@angular/material/button';
 export class HeaderComponent implements OnInit {
 // [x: string]: any;
 cartItemCount: number = 0;
+  router: any;
 
 constructor(private cartSrv:CartService){}
 
@@ -24,6 +26,35 @@ constructor(private cartSrv:CartService){}
     this.cartSrv.getCartItems().subscribe(items => {
       this.cartItemCount = items.reduce((total, item) => total + item.stock_quantity, 0);
     });
+  }
+
+
+  isLoggedIn: boolean = false;
+  username: string = '';
+
+  login() {
+ 
+    // Simulated login logic
+    this.isLoggedIn = true;
+    this.username = 'John Doe'; // Replace with actual username retrieved from authentication
+    
+    // Store login status in local storage
+    localStorage.setItem('isLoggedIn', 'true');
+    localStorage.setItem('username', this.username);
+  }
+
+  logout() {
+ 
+    // Simulated logout logic
+    this.isLoggedIn = false;
+    this.username = '';
+    
+    // Clear local storage
+    localStorage.removeItem('isLoggedIn');
+    localStorage.removeItem('username');
+    
+ 
+  
   }
 
 
