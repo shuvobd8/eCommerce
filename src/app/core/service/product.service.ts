@@ -19,5 +19,9 @@ export class ProductService {
   getProducts():Observable<ApiResponseModel>{
     return this.api.get(environment.api_url+Constant.API_END_POINT.GET_PRODUCT)
   }
+ 
+  getProductById(id:any):Observable<ApiResponseModel>{
+    return this.api.get(environment.api_url+Constant.API_END_POINT.GET_PRODUCT_BY_ID+id);
+  }
 
 }
