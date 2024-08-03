@@ -106,6 +106,7 @@
  .product-card-img img{
     height: 152.66px;
     width: 229px;
+    cursor: pointer;
 }  
 
 
