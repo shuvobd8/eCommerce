@@ -51,4 +51,32 @@
   margin-left: 10px;
 
 
-}
+} 
+
+
+
+
+/* 
+ .container .slide .item{
+ 
+  height: 300px;
+  position: static;
+  border-radius: 20px;
+  box-shadow: 0 30px 50px #505050;
+  background-position: 50% 50%;
+  background-size: cover;
+
+} 
+
+
+.container .item .content{
+  position: absolute;
+  top: 50%;
+  left: 100px;
+  width: 300px;
+  text-align: left;
+  color: #eee;
+  transform: translate(0, -50%);
+  font-family: system-ui;
+  display: none;
+} */
