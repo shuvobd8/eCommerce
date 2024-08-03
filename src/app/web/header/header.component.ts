@@ -50,7 +50,7 @@ constructor(private cartSrv:CartService){}
     this.username = '';
     
     // Clear local storage
-    // localStorage.removeItem('isLoggedIn');
+    localStorage.removeItem('isLoggedIn');
     localStorage.removeItem('username');
     
  
