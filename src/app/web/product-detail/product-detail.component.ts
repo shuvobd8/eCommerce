@@ -5,6 +5,7 @@ import { ProductService } from '../../core/service/product.service';
 import { ApiResponseModel } from '../../core/classes/api-response.model';
 import { ToastrService } from 'ngx-toastr';
 import { CommonModule } from '@angular/common';
+import { CartService } from '../../core/service/cart.service';
 
 @Component({
   selector: 'app-product-detail',
@@ -17,7 +18,8 @@ export class ProductDetailComponent implements OnInit {
 
   productId: any;
   productobj:Product = new Product();
-  constructor(private toastr: ToastrService,private route: ActivatedRoute,private productSrv:ProductService) { }
+ 
+  constructor(private toastr: ToastrService,private route: ActivatedRoute,private productSrv:ProductService,private cartSrv:CartService) { }
   
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
@@ -34,6 +36,11 @@ export class ProductDetailComponent implements OnInit {
         this.toastr.error(error,'Error Message')
       })
     });
+  }
+
+  addToCart(product: any) {
+    this.cartSrv.addToCart(product);
+    //this.toastr.success('Product Cart to successful', 'Success')
   }
 
 }
