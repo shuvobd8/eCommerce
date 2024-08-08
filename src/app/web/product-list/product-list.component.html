@@ -14,7 +14,7 @@
                               [ngClass]="{'bg-success': product.stock_quantity > 1, 'bg-danger': product.stock_quantity <= 1}">
                          {{ product.stock_quantity > 1 ? 'In Stock' : 'Out Stock' }}
                        </label>
-                                  <img routerLink="/product-detail" [src]="product.image">
+                                  <img routerLink="/product-detail" [queryParams]="{ id: product.product_id }" [src]="product.image">
                             </div>
                             <div class="product-card-body">
                               
