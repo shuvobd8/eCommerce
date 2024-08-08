@@ -2,8 +2,10 @@
     border: 1px solid #e0e0e0;
     border-radius: 5px;
     margin-bottom: 20px;
-    padding: 15px;
     text-align: center;
+
+    background-color: #fff;
+  
   }
   
   .product-card img {
@@ -39,15 +41,8 @@
   }
   
 
-
-
-
   /* Product Card */
- .product-card{
-  background-color: #fff;
-  border: 1px solid #ccc;
-  margin-bottom: 24px;
-}
+
 .product-card a{
   text-decoration: none;
 }
@@ -100,7 +95,6 @@
   text-decoration: line-through;
 } 
 
-/* Product Card End */
 
 
  .product-card-img img{
@@ -108,6 +102,13 @@
     width: 229px;
     cursor: pointer;
 }  
+
+.col-md-3 {
+  flex: 0 0 auto;
+  width: 20%;
+}
+
+/* Product Card End */
 
 
 /* ---------------End-----------  */
