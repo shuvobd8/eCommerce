@@ -57,7 +57,6 @@ constructor(private cartSrv:CartService,private user:UserService,private toastr:
         alert(redirectUrl)
         this.router.navigate([redirectUrl]);
         
-
       }else{
         this.toastr.error(res.vMsg,'Error Message')
       }
